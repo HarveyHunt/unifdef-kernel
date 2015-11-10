@@ -4,8 +4,9 @@ set -e
 
 unifdef -V >/dev/null 2>&1 || { echo "unifdef is required"; exit 1; }
 
-if [ $# -eq 1 ]; then
+if [ $# -eq 0 ]; then
     echo $(basename $0) "<Kconfig> [unifdef args]"
+    exit 1
 else 
     conf=$1
     shift
